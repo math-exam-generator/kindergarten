@@ -1,1 +1,1 @@
-# math_exam_generator
+# webpack-react-boilplate
