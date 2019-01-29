@@ -10,7 +10,7 @@ const dirNode = "node_modules";
 const dirApp = path.join(__dirname, "src");
 const dirAssets = path.join(__dirname, "assets");
 
-const appHtmlTitle = "Webpack Boilerplate";
+const appHtmlTitle = "Math Exam Generator";
 
 const vendor = ["react", "react-dom", "react-router"];
 
@@ -20,14 +20,14 @@ const vendor = ["react", "react-dom", "react-router"];
 module.exports = {
   entry: {
     vendor,
-    app: ["react-hot-loader/patch", path.join(dirApp, "main")]
+    app: ["react-hot-loader/patch", "babel-polyfill", path.join(dirApp, "main")]
   },
   resolve: {
     alias: {
       pages: path.join(__dirname, "src/containers"),
       components: path.join(__dirname, "src/components"),
       router: path.join(__dirname, "src/router"),
-      moudles: path.join(__dirname, "src/redux/moudles"),
+      moudles: path.join(__dirname, "src/redux/moudles")
     },
     modules: [dirNode, dirApp, dirAssets]
   },

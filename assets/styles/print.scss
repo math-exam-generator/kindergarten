@@ -1,0 +1,21 @@
+.show-print {
+  display: none !important;
+}
+
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
+  .show-print {
+    display: block !important;
+  }
+  .wrapper {
+    height: auto;
+  }
+  .table {
+    border: none;
+    overflow-y: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

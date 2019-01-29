@@ -1,5 +1,10 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei",
+    "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+  font-size: 14px;
+}
 .wrapper {
-    height: 100vh;
+  height: 100vh;
 }
 .flex1 {
   -moz-flex: 1;
@@ -7,4 +12,20 @@
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   flex: 1;
+}
+
+.table {
+  border: 1px solid #333;
+  border-top: none;
+  padding: 24px;
+  overflow-y: scroll;
+  margin-bottom: 24px;
+  font-size: 24px;
+  .item {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  &-top {
+    border-top: 1px solid #333;
+  }
 }
