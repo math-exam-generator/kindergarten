@@ -1,1 +1,0 @@
-# math_exam_generator
