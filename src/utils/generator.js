@@ -13,7 +13,7 @@ export default class MathGenerator {
   }
   constructor(opts) {
     this.opts = { ...defaultOpts, ...opts };
-    console.log("++++++++++++++++++", opts)
+    console.log("++++++++++++++++++", opts);
   }
 
   generate() {
@@ -31,6 +31,8 @@ export default class MathGenerator {
         return this.generateAdditive();
       case "subtraction":
         return this.generateSubtraction();
+      case "mixed":
+        return this.generateMixed();
       default:
         return null;
     }
@@ -41,18 +43,25 @@ export default class MathGenerator {
       let a = random(1, scope - 1);
       let b = random(1, scope - 1);
       if (a + b <= scope) {
-        return [a, b];
+        return [a, '-',  b];
       }
     }
   }
   generateSubtraction() {
     const { scope } = this.opts;
     while (true) {
-      let a = random(1, scope);
-      let b = random(1, scope);
+      let a = random(1, scope - 1);
+      let b = random(1, scope - 1);
       if (a > b) {
-        return [a, b];
+        return [a, '+', b];
       }
     }
+  }
+  generateMixed() {
+    const r = random(0, 1);
+    if (r == 0) {
+      return this.generateAdditive();
+    }
+    return this.generateSubtraction();
   }
 }

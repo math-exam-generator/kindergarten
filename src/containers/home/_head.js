@@ -12,7 +12,7 @@ import Button from "@material-ui/core/Button";
 import get from "lodash/get";
 
 //import redux
-import { examGenerateRequest } from "moudles/home/action";
+import { examGenerateRequest } from "../../redux/moudles/home/action";
 
 class Head extends Component {
   state = {
@@ -29,6 +29,7 @@ class Head extends Component {
     this.setState({ qty: value < 60 ? 60 : value });
   examGenerateRequest = () => {
     const payload = this.state;
+    console.log("this.state", this.state)
     this.props.examGenerateRequest && this.props.examGenerateRequest(payload);
   };
   render() {
@@ -54,6 +55,11 @@ class Head extends Component {
               value="subtraction"
               control={<Radio color="primary" />}
               label="减法运算"
+            />
+             <FormControlLabel
+              value="mixed"
+              control={<Radio color="primary" />}
+              label="混合运算"
             />
           </RadioGroup>
         </FormControl>
