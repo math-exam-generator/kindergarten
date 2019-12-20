@@ -43,7 +43,7 @@ export default class MathGenerator {
       let a = random(1, scope - 1);
       let b = random(1, scope - 1);
       if (a + b <= scope) {
-        return [a, '-',  b];
+        return [a, '+',  b];
       }
     }
   }
@@ -53,7 +53,7 @@ export default class MathGenerator {
       let a = random(1, scope - 1);
       let b = random(1, scope - 1);
       if (a > b) {
-        return [a, '+', b];
+        return [a, '-', b];
       }
     }
   }
